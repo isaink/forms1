@@ -2,7 +2,17 @@ import React from 'react';
 import './mission.css';
 const countries = require('./countries.json');
 
-const months = 'jan'
+const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  
+let days = []
+for(let i = 1; i <= 31; i++){
+  days.push(i)
+};
+
+const years = []
+for(let x = 180; x < 2007; x++){
+  years.push(x)
+};
 
 class Form extends React.Component {
   constructor() {
@@ -19,19 +29,22 @@ class Form extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   };
 
-  handleInput(e) {
+  handleInput(e){
     this.setState({
       name: e.target.value
     })
   };
 
-  handleChange(event) {
+  handleChange(event){
     debugger
      this.setState({
        [event.target.name]: event.target.value
       })
    };
   
+   handleSubmit = (e) =>{
+
+   }
 
     render(){
      
