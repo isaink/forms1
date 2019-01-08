@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+  /* Image-BG of the Galaxy */
+  background-image: url("https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjiqI6tztzfAhVKm-AKHQz9BOcQjRx6BAgBEAU&url=http%3A%2F%2Feskipaper.com%2Fgalaxy-wallpaper-hd-21.html&psig=AOvVaw37gOHTekpIoBVf4lEecFZb&ust=1546982681249928");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
