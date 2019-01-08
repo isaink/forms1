@@ -1,7 +1,8 @@
 import React from 'react';
 import './mission.css';
 const countries = require('./countries.json');
-// const
+
+const months = 'jan'
 
 class Form extends React.Component {
   constructor() {
@@ -18,11 +19,22 @@ class Form extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   };
 
+  handleInput(e) {
+    this.setState({
+      name: e.target.value
+    })
+  };
+
   handleChange(event) {
-     this.setState({[event.target.name]: event.target.value});
-   }
+    debugger
+     this.setState({
+       [event.target.name]: event.target.value
+      })
+   };
+  
 
     render(){
+     
       return(
         <>
           <header>
@@ -34,16 +46,33 @@ class Form extends React.Component {
               <label htmlFor='Mision'>
                Mission
               </label>
-              <input type="texst" placeholder="Mission" name="mission" value="" />
+              <input type="text" placeholder="Mission" name="mission" value={this.state.name} onInput={this.handleInput} />
               <label htmlFor='Name'>
                 What is your name?
               </label>
-              <input type='text' placeholder='Your name' name="name" value="" />
+              <input type='text' placeholder='Your name' name="name" value={this.state.name} onInput={this.handleInput} />
               <label htmlFor='Birth'>
                 What is your date of birth?
               </label>
-              <input type="date" id="date" name="birth" value="" min="1980-01-01" max="2019-01-01" required/>
-              <span class="validity"></span>
+              <select name='month' onChange={this.handleChange}>
+                { months.map(month => (
+                  <option value={month}>{month} </option>
+                ))}
+              </select>
+              <select name='days' onChange={this.handleChange}>
+                { days.map(day => (
+                  <option value={day}>{day} </option>
+                ))}
+              </select>
+              <select name='years' onChange={this.handleChange}>
+                { years.map(year => (
+                  <option value={year}>{year} </option>
+                ))}
+              </select>
+              <button type='submit'>Submit</button>
+              {/* <input type="date" id="date" name="birth" value="" min="1980-01-01" max="2019-01-01" required/>
+              <span class="validity"></span> */}
+
               <label htmlFor='country'>
                 What is your country of origin?
               </label>
@@ -51,7 +80,7 @@ class Form extends React.Component {
               <label htmlFor='dietary'>
                 What is your dietary preference?
               </label>
-              <select> </select>
+              <select > </select>
               <label htmlFor='dietary'>
                 Why do you want to be a Mars explorer?
               </label>
