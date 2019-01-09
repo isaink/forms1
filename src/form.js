@@ -14,14 +14,18 @@ for(let x = 180; x < 2007; x++){
   years.push(x)
 };
 
+const dietary = ['Paleo', 'Regular', 'for Blood Type', 'Vegan', 'Mediterranean', 'Raw Food', 'Vegetarian', 'Non-GMO' ]
+
 class Form extends React.Component {
   constructor() {
     super();
     this.state = {
                   mission: '',
                   name: '',
-                  birth: '',
-                  date: '',
+                  // birth: 0,
+                  months: '',
+                  days: 0,
+                  years: 0,
                   selectedCountry: '',
                   dietary: '',
                   formSubmitted:false
@@ -47,7 +51,9 @@ class Form extends React.Component {
    }
 
     render(){
-     
+      const { name, country } = this.state;
+      console.log(this.state);
+
       return(
         <>
           <header>
@@ -93,8 +99,8 @@ class Form extends React.Component {
               <label htmlFor='dietary'>
                 What is your dietary preference?
               </label>
-              <select > </select>
-              <label htmlFor='dietary'>
+              <select name='dietary' value={this.state.dietary} onChange={this.handleChange}> </select>
+              <label htmlFor='explorer'>
                 Why do you want to be a Mars explorer?
               </label>
               <input type="text" placeholder="Why?" name="explorer" value="" />
