@@ -10,7 +10,7 @@ for(let i = 1; i <= 31; i++){
 };
 
 const years = []
-for(let x = 180; x < 2007; x++){
+for(let x = 1800; x < 2007; x++){
   years.push(x)
 };
 
@@ -26,11 +26,12 @@ class Form extends React.Component {
                   months: '',
                   days: 0,
                   years: 0,
-                  selectedCountry: '',
+                  country: '',
                   dietary: '',
                   formSubmitted:false
                   }
     this.handleChange = this.handleChange.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   };
 
   handleInput(e){
@@ -40,7 +41,7 @@ class Form extends React.Component {
   };
 
   handleChange(event){
-    debugger
+    // debugger
      this.setState({
        [event.target.name]: event.target.value
       })
@@ -95,7 +96,11 @@ class Form extends React.Component {
               <label htmlFor='country'>
                 What is your country of origin?
               </label>
-                <select placeholder="Your country" name= "country" value={ this.state.country }> </select>
+                <select placeholder="Your country" name= "country" value={ this.state.country } onChange={this.handleChange}>
+                  { countries.map(country => (
+                    <option value={country.name}>{country.name} </option>
+                  ))}
+                </select>
               <label htmlFor='dietary'>
                 What is your dietary preference?
               </label>

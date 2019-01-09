@@ -1,5 +1,12 @@
 *{
-
+  font-family: 'Orbitron', sans-serif;
+}
+body {
+  position: fixed;
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  background-image: url("https://wallpapersite.com/images/wallpapers/stars-3840x2160-galaxy-4k-6362.jpg");
 }
 
 h1{
@@ -33,4 +40,5 @@ label {
 
 input, select {
     margin-bottom: 20px;
+      font-family: 'Raleway', sans-serif;
 }
